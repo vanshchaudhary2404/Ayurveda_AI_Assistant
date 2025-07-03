@@ -1,24 +1,19 @@
 import React, { useState, useRef } from 'react';
 import { Camera, Upload, X, Loader2 } from 'lucide-react';
 
-interface ImageUploadProps {
-  onImageAnalysis: (file: File) => void;
-  loading: boolean;
-}
-
-const ImageUpload: React.FC<ImageUploadProps> = ({ onImageAnalysis, loading }) => {
-  const [selectedImage, setSelectedImage] = useState<File | null>(null);
-  const [previewUrl, setPreviewUrl] = useState<string | null>(null);
+const ImageUpload = ({ onImageAnalysis, loading }) => {
+  const [selectedImage, setSelectedImage] = useState(null);
+  const [previewUrl, setPreviewUrl] = useState(null);
   const [dragActive, setDragActive] = useState(false);
-  const fileInputRef = useRef<HTMLInputElement>(null);
+  const fileInputRef = useRef(null);
 
-  const handleImageSelect = (file: File) => {
+  const handleImageSelect = (file) => {
     setSelectedImage(file);
     const url = URL.createObjectURL(file);
     setPreviewUrl(url);
   };
 
-  const handleDrag = (e: React.DragEvent) => {
+  const handleDrag = (e) => {
     e.preventDefault();
     e.stopPropagation();
     if (e.type === 'dragenter' || e.type === 'dragover') {
@@ -28,7 +23,7 @@ const ImageUpload: React.FC<ImageUploadProps> = ({ onImageAnalysis, loading }) =
     }
   };
 
-  const handleDrop = (e: React.DragEvent) => {
+  const handleDrop = (e) => {
     e.preventDefault();
     e.stopPropagation();
     setDragActive(false);
@@ -39,7 +34,7 @@ const ImageUpload: React.FC<ImageUploadProps> = ({ onImageAnalysis, loading }) =
     }
   };
 
-  const handleFileInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleFileInput = (e) => {
     const files = e.target.files;
     if (files && files.length > 0) {
       handleImageSelect(files[0]);

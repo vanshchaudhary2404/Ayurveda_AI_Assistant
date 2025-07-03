@@ -7,35 +7,23 @@ import HerbResults from './components/HerbResults';
 import Features from './components/Features';
 import Footer from './components/Footer';
 
-export type Mode = 'image' | 'symptom';
-
-export interface HerbInfo {
-  name: string;
-  scientificName: string;
-  commonUses: string[];
-  dosage: string;
-  form: string[];
-  precautions: string[];
-  confidence?: number;
-}
-
 function App() {
-  const [currentMode, setCurrentMode] = useState<Mode | null>(null);
-  const [results, setResults] = useState<HerbInfo[]>([]);
+  const [currentMode, setCurrentMode] = useState(null);
+  const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  const handleModeSelect = (mode: Mode) => {
+  const handleModeSelect = (mode) => {
     setCurrentMode(mode);
     setResults([]);
   };
 
-  const handleImageAnalysis = async (imageFile: File) => {
+  const handleImageAnalysis = async (imageFile) => {
     setLoading(true);
     
     // Simulate AI analysis
     await new Promise(resolve => setTimeout(resolve, 2000));
     
-    const mockResults: HerbInfo[] = [
+    const mockResults = [
       {
         name: "Neem",
         scientificName: "Azadirachta indica",
@@ -51,13 +39,13 @@ function App() {
     setLoading(false);
   };
 
-  const handleSymptomAnalysis = async (symptoms: string) => {
+  const handleSymptomAnalysis = async (symptoms) => {
     setLoading(true);
     
     // Simulate AI analysis
     await new Promise(resolve => setTimeout(resolve, 1500));
     
-    const mockResults: HerbInfo[] = [
+    const mockResults = [
       {
         name: "Tulsi",
         scientificName: "Ocimum sanctum",

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Brain, Camera, Shield, Zap, Users, BookOpen } from 'lucide-react';
 
-const Features: React.FC = () => {
+const Features = () => {
   const features = [
     {
       icon: Brain,

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Leaf } from 'lucide-react';
 
-const Header: React.FC = () => {
+const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-emerald-100 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

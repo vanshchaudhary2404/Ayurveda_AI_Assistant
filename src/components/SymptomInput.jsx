@@ -1,15 +1,10 @@
 import React, { useState } from 'react';
 import { MessageCircle, Loader2, Send } from 'lucide-react';
 
-interface SymptomInputProps {
-  onSymptomAnalysis: (symptoms: string) => void;
-  loading: boolean;
-}
-
-const SymptomInput: React.FC<SymptomInputProps> = ({ onSymptomAnalysis, loading }) => {
+const SymptomInput = ({ onSymptomAnalysis, loading }) => {
   const [symptoms, setSymptoms] = useState('');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     if (symptoms.trim()) {
       onSymptomAnalysis(symptoms);
@@ -27,7 +22,7 @@ const SymptomInput: React.FC<SymptomInputProps> = ({ onSymptomAnalysis, loading 
     'Fatigue'
   ];
 
-  const handleSymptomClick = (symptom: string) => {
+  const handleSymptomClick = (symptom) => {
     setSymptoms(prev => prev ? `${prev}, ${symptom}` : symptom);
   };
 

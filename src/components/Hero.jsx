@@ -1,12 +1,7 @@
 import React from 'react';
 import { Camera, MessageCircle, Sparkles, Shield } from 'lucide-react';
-import { Mode } from '../App';
 
-interface HeroProps {
-  onModeSelect: (mode: Mode) => void;
-}
-
-const Hero: React.FC<HeroProps> = ({ onModeSelect }) => {
+const Hero = ({ onModeSelect }) => {
   return (
     <section className="pt-20 pb-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">

@@ -1,13 +1,7 @@
 import React from 'react';
 import { Leaf, AlertTriangle, Pill, CheckCircle } from 'lucide-react';
-import { HerbInfo, Mode } from '../App';
 
-interface HerbResultsProps {
-  results: HerbInfo[];
-  mode: Mode;
-}
-
-const HerbResults: React.FC<HerbResultsProps> = ({ results, mode }) => {
+const HerbResults = ({ results, mode }) => {
   return (
     <div className="mt-8 space-y-6">
       <div className="text-center">
