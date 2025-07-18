@@ -84,6 +84,7 @@ Coming soon
 cd backend
 pip install -r requirements.txt
 python app.py
+```
 
 ## Future Scope
 Voice input and response using speech recognition
