@@ -1,3 +1,4 @@
+//React file for UI/UX
 import React, { useState } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
@@ -7,7 +8,7 @@ import HerbResults from './components/HerbResults';
 import Features from './components/Features';
 import Footer from './components/Footer';
 
-function App() {
+function App(){
   const [currentMode, setCurrentMode] = useState(null);
   const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(false);
